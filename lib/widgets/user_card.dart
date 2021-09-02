@@ -12,15 +12,19 @@ class UserCard extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           ProfileAvatar(imageUrl: user.imageUrl),
           const SizedBox(
             width: 6.0,
           ),
-          Text(
-            user.name,
-            style: TextStyle(
-              fontSize: 16.0,
+          Flexible(
+            child: Text(
+              user.name,
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
+              overflow: TextOverflow.ellipsis,
             ),
           )
         ],
